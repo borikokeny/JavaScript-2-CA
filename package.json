@@ -4,7 +4,8 @@
   "description": "Noroff School Assignment - Social Media Site by using API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/borikokeny/JavaScript-2-CA/issues"
   },
-  "homepage": "https://github.com/borikokeny/JavaScript-2-CA#readme"
+  "homepage": "https://github.com/borikokeny/JavaScript-2-CA#readme",
+  "devDependencies": {
+    "sass": "^1.70.0"
+  }
 }
