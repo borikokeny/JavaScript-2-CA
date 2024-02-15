@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/dist/css/index.css">
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/src/js/index.mjs" defer type="module"></script>
+  <!-- <script src="/src/js/handlers/register.mjs" defer type="module"></script> -->
+</head>
+<body>
+  <!-- <h1>This is a test</h1>
+  <button class="btn btn-primary">test</button> -->
+  <form id="loginForm" class="rounded-3 bg-body-tertiary">
+
+    <div>
+      <label for="floatingInput">Email address</label>
+      <input type="email" name="email" class="form-control" pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @(stud).noroff.no domains are allowed" required>
+    </div>
+    
+    <div>
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" minlength="8" required>
+    </div>
+
+    <button>Login</button>
+    <!-- <button><a href="../index.html">Login</a></button> -->
+
+
+  </form>
+</body>
+</html>
