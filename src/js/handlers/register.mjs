@@ -1,16 +1,22 @@
-// import { register } from "../api/auth/register.mjs";
+import { register } from "../api/auth/register.mjs";
 
-// export function setRegisterFormListener() {
-//   const form = document.querySelector("#registerForm");
+export function setRegisterFormListener() {
+  const form = document.querySelector("#registerForm");
 
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     const form = event.target;
-//     const formData = new FormData(form);
-//     const profile = Object.fromEntries(formData.entries());
-
-//     register(email, password)
-//   })
-// }
-
-//11:44
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault()
+      const form = event.target;
+      const formData = new FormData(form);
+      const profile = Object.fromEntries(formData.entries())
+  
+      // register(profile)
+      try {
+        await register(profile);
+        // await getPosts();
+      } catch {
+        console.error("error");
+      }
+    })
+  }
+}
