@@ -1,5 +1,5 @@
 import { login } from "../api/auth/login.mjs";
-import { getPosts } from "../api/posts/get.mjs";
+import { viewPosts } from "../api/posts/view.mjs";
 
 export function setLoginFormListener() {
   const form = document.querySelector("#loginForm");
@@ -13,7 +13,7 @@ export function setLoginFormListener() {
 
       try {
         await login(profile);
-        await getPosts();
+        await viewPosts();
       } catch {
         console.error("error");
       }
