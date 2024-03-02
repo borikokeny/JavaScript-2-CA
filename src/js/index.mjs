@@ -6,10 +6,12 @@ setRegisterFormListener()
 
 setLoginFormListener()
 
-posts.createPost({
-  title: "Is it",
-  body: "Is that"
-})
+
+// posts.createPost()
+// posts.updatePost()
+// posts.viewPost(679).then(console.log)
+// posts.viewPosts().then(console.log)
+// posts.removePost(694)
 
 
 
