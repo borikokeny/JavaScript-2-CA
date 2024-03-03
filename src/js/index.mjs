@@ -1,9 +1,9 @@
-import { setRegisterFormListener } from "./handlers/register.mjs";
-import { setLoginFormListener } from "./handlers/login.mjs";
+// import { setRegisterFormListener } from "./handlers/register.mjs";
+// import { setLoginFormListener } from "./handlers/login.mjs";
 import * as templates from "./templates/index.mjs";
 import * as postMethods from "./api/posts/index.mjs";
-import { renderPostTemplates } from "./templates/index.mjs";
-import { setCreatePostFormListener } from "./handlers/createPost.mjs";
+// import { renderPostTemplates } from "./templates/index.mjs";
+// import { setCreatePostFormListener } from "./handlers/createPost.mjs";
 import * as listeners from "./handlers/index.mjs";
 
 
@@ -26,20 +26,19 @@ listeners.setUpdatePostListener()
 // posts.updatePost()
 // posts.viewPost(679).then(console.log)
 // posts.viewPosts().then(console.log)
-// posts.removePost(694)
+// postMethods.removePost(650)
 
 
 
-// async function testTemplate() {
-//   const posts = await postMethods.viewPosts();
-//   // const post = posts.data.shift();
-//   const post = posts.data.pop();
-//   // const post = posts.data[79];
-//   const container = document.querySelector("#post");
-//   templates.renderPostTemplate(post, container);
-// }
+async function postPageTemplate() {
+  const posts = await postMethods.viewPosts();
+  // const post = posts.data[741];
+  const post = posts.data.pop();
+  const container = document.querySelector("#post");
+  templates.renderPostPageTemplate(post, container);
+}
 
-// testTemplate()
+postPageTemplate()
 
 // async function testTemplateB() {
 //   const posts = await postMethods.viewPosts();
@@ -52,16 +51,16 @@ listeners.setUpdatePostListener()
 
 // testTemplateB()
 
-async function testTemplateB() {
+async function postListTemplate() {
   const posts = await postMethods.viewPosts();
   // const post = posts.data.shift();
   // const post = posts.data.pop();
   // const post = posts.data[79];
   const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
+  templates.renderPostListTemplate(posts, container);
 }
 
-testTemplateB()
+postListTemplate()
 
 
 
