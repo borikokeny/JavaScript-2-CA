@@ -20,6 +20,7 @@ listeners.setLoginFormListener()
 listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()
 listeners.setUpdatePostListener()
+templates.postTemplate()
 
 
 // posts.createPost()
@@ -31,11 +32,11 @@ listeners.setUpdatePostListener()
 
 
 async function postPageTemplate() {
-  const posts = await postMethods.viewPosts();
+  const post = await postMethods.viewPosts();
   // const post = posts.data[741];
-  const post = posts.data.pop();
+  // const post = posts.data.pop();
   const container = document.querySelector("#post");
-  templates.renderPostPageTemplate(post, container);
+  // templates.renderPostPageTemplate(post, container);
 }
 
 postPageTemplate()

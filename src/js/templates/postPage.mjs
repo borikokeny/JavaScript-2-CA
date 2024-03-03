@@ -37,14 +37,21 @@ export async function postTemplate() {
 
   // button.addEventListener("click", () => console.log(postData))
 
-  return post;
+  // return post;
 }
 
-export function renderPostPageTemplate(postData, parent) {
-  // parent.innerHTML = postTemplateA(postData)
 
-  parent.append(postTemplate(postData))
-}
+
+
+
+// export function renderPostPageTemplate(postData, parent) {
+//   // parent.innerHTML = postTemplateA(postData)
+
+//   parent.append(postTemplate(postData))
+// }
+
+
+
 
 // export function renderPostTemplates(postDataList, parent) {
 //   parent.append(...postDataList.data.map(postTemplateB))
