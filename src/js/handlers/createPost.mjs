@@ -1,22 +1,23 @@
-import { login } from "../api/auth/login.mjs";
-import { viewPosts } from "../api/posts/view.mjs";
+import { createPost } from "../api/posts/index.mjs";
 
-export function setLoginFormListener() {
-  const form = document.querySelector("#loginForm");
+export function setCreatePostFormListener() {
+  const form = document.querySelector("#createPost");
 
   if (form) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault()
       const form = event.target;
       const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
+      const post = Object.fromEntries(formData.entries());
 
-      try {
-        await login(profile);
-        await viewPosts();
-      } catch {
-        console.error("error");
-      }
+      // try {
+      //   await login(profile);
+      //   await viewPosts();
+      // } catch {
+      //   console.error("error");
+      // }
+
+      createPost(post)
     })
   }
   // const posts = ;

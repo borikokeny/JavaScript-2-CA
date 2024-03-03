@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="/dist/css/index.css">
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/src/js/index.mjs" defer type="module"></script>
+</head>
+<body>
+  <h1>This is a test</h1>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+        <form id="createPost">
+          <div class="form-group">
+            <label for="">Title</label>
+            <input class="form-control" type="text" name="title" required maxlength="100">
+          </div>
+    
+          <div class="form-group">
+            <label for="">Body</label>
+            <textarea class="form-control" type="text" name="body" required maxlength="500"></textarea>
+          </div>
+    
+          <div class="form-group">
+            <label for="">Tags</label>
+            <input class="form-control" type="text" name="tags">
+          </div>
+    
+          <div class="form-group">
+            <label for="">Media</label>
+            <input class="form-control" type="url" name="media">
+          </div>
+    
+          <button class="btn btn-success">Create Post</button>
+    
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

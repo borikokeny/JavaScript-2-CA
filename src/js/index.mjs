@@ -3,6 +3,8 @@ import { setLoginFormListener } from "./handlers/login.mjs";
 import * as templates from "./templates/index.mjs";
 import * as postMethods from "./api/posts/index.mjs";
 import { renderPostTemplates } from "./templates/index.mjs";
+import { setCreatePostFormListener } from "./handlers/createPost.mjs";
+import * as listeners from "./handlers/index.mjs";
 
 
 // ezt majd rendbe kell tenni!!!
@@ -14,8 +16,10 @@ import { renderPostTemplates } from "./templates/index.mjs";
 //   setRegisterFormListener()
 // }
 
-setLoginFormListener()
-setRegisterFormListener()
+listeners.setLoginFormListener()
+listeners.setRegisterFormListener()
+listeners.setCreatePostFormListener()
+listeners.setUpdatePostListener()
 
 
 // posts.createPost()
@@ -26,27 +30,45 @@ setRegisterFormListener()
 
 
 
-async function testTemplate() {
-  const posts = await postMethods.viewPosts();
-  // const post = posts.data.shift();
-  const post = posts.data.pop();
-  // const post = posts.data[79];
-  const container = document.querySelector("#post");
-  templates.renderPostTemplate(post, container);
-}
+// async function testTemplate() {
+//   const posts = await postMethods.viewPosts();
+//   // const post = posts.data.shift();
+//   const post = posts.data.pop();
+//   // const post = posts.data[79];
+//   const container = document.querySelector("#post");
+//   templates.renderPostTemplate(post, container);
+// }
 
-testTemplate()
+// testTemplate()
+
+// async function testTemplateB() {
+//   const posts = await postMethods.viewPosts();
+//   // const post = posts.data.shift();
+//   // const post = posts.data.pop();
+//   // const post = posts.data[79];
+//   const container = document.querySelector("#post");
+//   templates.renderPostTemplates(posts, container);
+// }
+
+// testTemplateB()
 
 async function testTemplateB() {
   const posts = await postMethods.viewPosts();
   // const post = posts.data.shift();
   // const post = posts.data.pop();
   // const post = posts.data[79];
-  const container = document.querySelector("#post");
+  const container = document.querySelector("#posts");
   templates.renderPostTemplates(posts, container);
 }
 
 testTemplateB()
+
+
+
+
+
+
+
 
 //ha megvan a KEY, ki lehet torolni
 // export async function getAPIKey(){
