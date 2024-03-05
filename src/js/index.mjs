@@ -52,18 +52,32 @@ postPageTemplate()
 
 // testTemplateB()
 
-async function postListTemplate() {
+async function postListaTemplate() {
   const posts = await postMethods.viewPosts();
-  // const post = posts.data.shift();
-  // const post = posts.data.pop();
-  // const post = posts.data[79];
+
   const container = document.querySelector("#posts");
-  templates.renderPostListTemplate(posts, container);
+  renderPostListTemplate(posts, container);
+
+  const profile = localStorage.getItem("profile");
+  const obj = JSON.parse(profile);
+  const userEmail = obj.email;
+  console.log(profile);
+  console.log(userEmail);
+  // posts.forEach((post) => {
+  //   const isAuthor = post.author.email === userEmail;
+  //   console.log({ isAuthor });
+
+  // });
+
 }
 
-postListTemplate()
+postListaTemplate()
+
+function renderPostListTemplate(postDataList, parent) {
 
 
+  parent.append(...postDataList.data.map(templates.postListTemplate))
+}
 
 
 
@@ -92,15 +106,7 @@ postListTemplate()
 // }
 
 
-
-
-
-
-
-
-
 // getAPIKey().then(console.log)
-
 
 
 // export async function onAuth(event) {
