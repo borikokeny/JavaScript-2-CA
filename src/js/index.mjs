@@ -58,6 +58,7 @@ async function postListTemplate() {
   // const post = posts.data.pop();
   // const post = posts.data[79];
   const container = document.querySelector("#posts");
+  container.classList.add("container");
   templates.renderPostListTemplate(posts, container);
 }
 

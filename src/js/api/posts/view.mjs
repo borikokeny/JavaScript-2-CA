@@ -1,9 +1,9 @@
-import  { API_HOST_URL, API_POSTS } from "../constants.mjs";
+import  { API_HOST_URL, API_POSTS, API_POSTS_WITH_AUTHOR } from "../constants.mjs";
 import { authFetch } from "../fetch.mjs";
 // import { headers } from "../headers.mjs";
 
 export async function viewPosts() { 
-  const viewPostsURL = `${API_HOST_URL}${API_POSTS}`;
+  const viewPostsURL = `${API_HOST_URL}${API_POSTS_WITH_AUTHOR}`;
 
   const response = await authFetch(viewPostsURL);
 
