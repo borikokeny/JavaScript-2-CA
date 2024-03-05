@@ -1,9 +1,71 @@
-import { setRegisterFormListener } from "./handlers/register.mjs";
-import { setLoginFormListener } from "./handlers/login.mjs";
+// import { setRegisterFormListener } from "./handlers/register.mjs";
+// import { setLoginFormListener } from "./handlers/login.mjs";
+import * as templates from "./templates/index.mjs";
+import * as postMethods from "./api/posts/index.mjs";
+// import { renderPostTemplates } from "./templates/index.mjs";
+// import { setCreatePostFormListener } from "./handlers/createPost.mjs";
+import * as listeners from "./handlers/index.mjs";
 
-setRegisterFormListener()
 
-setLoginFormListener()
+// ezt majd rendbe kell tenni!!!
+// const path = location.pathname;
+
+// if (path === '/profile/login/') {
+//   setLoginFormListener()
+// } else if (path === '/profile/register/') {
+//   setRegisterFormListener()
+// }
+
+listeners.setLoginFormListener()
+listeners.setRegisterFormListener()
+listeners.setCreatePostFormListener()
+listeners.setUpdatePostListener()
+templates.postTemplate()
+
+
+// posts.createPost()
+// posts.updatePost()
+// posts.viewPost(679).then(console.log)
+// posts.viewPosts().then(console.log)
+// postMethods.removePost(650)
+
+
+
+async function postPageTemplate() {
+  const post = await postMethods.viewPosts();
+  // const post = posts.data[741];
+  // const post = posts.data.pop();
+  const container = document.querySelector("#post");
+  // templates.renderPostPageTemplate(post, container);
+}
+
+postPageTemplate()
+
+// async function testTemplateB() {
+//   const posts = await postMethods.viewPosts();
+//   // const post = posts.data.shift();
+//   // const post = posts.data.pop();
+//   // const post = posts.data[79];
+//   const container = document.querySelector("#post");
+//   templates.renderPostTemplates(posts, container);
+// }
+
+// testTemplateB()
+
+async function postListTemplate() {
+  const posts = await postMethods.viewPosts();
+  // const post = posts.data.shift();
+  // const post = posts.data.pop();
+  // const post = posts.data[79];
+  const container = document.querySelector("#posts");
+  templates.renderPostListTemplate(posts, container);
+}
+
+postListTemplate()
+
+
+
+
 
 
 
