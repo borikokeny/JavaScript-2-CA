@@ -6,17 +6,20 @@ export async function postTemplate() {
 
   const post = await viewPost(id);
 
+  const postContainer = document.createElement("div");
+  postContainer.classList.add("container");
+
   const postImage = document.querySelector("#postImageContainer");
   const postTitle = document.querySelector("#postTitle");
   const postBody = document.querySelector("#postBody");
   // document.title = post.data.title;
-  postImage.alt =  `Image from ${post.data.media.alt}`;
+  postImage.alt = `Image from ${post.data.media.alt}`;
   postImage.src = post.data.media.url ?? `/images/img-placeholder.png`;
   postImage.style.width = "100%";
   postTitle.innerHTML = post.data.title;
   postBody.innerText = post.data.body;
 
-  
+  postContainer.append();
 
   // const postCard = document.createElement("div");
   // postCard.classList.add("post");
