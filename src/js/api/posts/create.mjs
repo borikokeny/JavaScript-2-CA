@@ -3,6 +3,7 @@ import { authFetch } from "../fetch.mjs";
 import { headers } from "../headers.mjs";
 
 export async function createPost(postData) { 
+  console.log(postData)
   const response = await authFetch(API_HOST_URL + API_POSTS, {
     method: "POST",
     headers: headers(),
@@ -11,14 +12,15 @@ export async function createPost(postData) {
       title: postData.title,
       body: postData.body,
       tags: postData.tags.split(","),
-      media: postData.media.url
+      media: {
+        "url": postData.media,
+        "alt": postData.title
+      }
     })
   })
 
   // const post = await response.json();
   // console.log(post)
-  console.log(postData)
+  // console.log(postData)
   return await response.json();
-
-  
 }
