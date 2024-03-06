@@ -13,7 +13,7 @@ export function setLoginFormListener() {
 
       try {
         await login(profile);
-        window.location.href = "../../../index.html";
+        window.location.href = "../../../posts/index.html";
         await viewPosts();
       } catch {
         console.error("error");

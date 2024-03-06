@@ -12,6 +12,10 @@ export async function register(profile) {
       avatar: {
         "url": profile.avatar,
         "alt": profile.name
+      },
+      banner: {
+        "url": profile.avatar,
+        "alt": profile.name
       }
     })
   });
