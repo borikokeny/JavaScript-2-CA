@@ -13,6 +13,7 @@ export function setRegisterFormListener() {
       // register(profile)
       try {
         await register(profile);
+        window.location.href = "../../../profile/login/index.html";
         // await getPosts();
       } catch {
         console.error("error");

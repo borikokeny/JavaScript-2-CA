@@ -4,7 +4,16 @@ import { authFetch } from "../fetch.mjs";
 export async function register(profile) {
   const response = await authFetch(API_HOST_URL + API_AUTH + API_REGISTER, {
     method: "POST",
-    body: JSON.stringify(profile)
+    // body: JSON.stringify(profile)
+    body: JSON.stringify({
+      name: profile.name,
+      email: profile.email,
+      password: profile.password,
+      avatar: {
+        "url": profile.avatar,
+        "alt": profile.name
+      }
+    })
   });
 
   if (response.ok) {
