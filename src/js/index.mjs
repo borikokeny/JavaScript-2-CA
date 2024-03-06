@@ -22,6 +22,7 @@ listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()
 listeners.setUpdatePostListener()
 templates.postTemplate()
+profile.viewProfile()
 
 
 // posts.createPost()
@@ -32,15 +33,15 @@ templates.postTemplate()
 
 
 
-async function postPageTemplate() {
-  const post = await postMethods.viewPosts();
-  // const post = posts.data[741];
-  // const post = posts.data.pop();
-  const container = document.querySelector("#post");
-  // templates.renderPostPageTemplate(post, container);
-}
+// async function postPageTemplate() {
+//   // const post = await postMethods.viewPosts();
+//   // const post = posts.data[741];
+//   // const post = posts.data.pop();
+//   const container = document.querySelector("#post");
+//   // templates.renderPostPageTemplate(post, container);
+// }
 
-postPageTemplate()
+// postPageTemplate()
 
 // async function testTemplateB() {
 //   const posts = await postMethods.viewPosts();

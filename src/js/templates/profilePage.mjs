@@ -8,12 +8,14 @@ export async function profileTemplate() {
   const profile = await viewProfile(name);
 
   const profileContainer = document.querySelector("#profileContainer");
+  const profileImage = document.querySelector("#profileImage");
+  profileImage.src = profile.data.avatar.url;
+  profileImage.style.width = "100%";
   const profileName = document.createElement("h3");
   profileName.innerText = profile.name;
 
-  profileContainer.append(profileName);
-
+  // profileContainer.append(profileName);
 
 }
 
-profileTemplate()
+// profileTemplate()

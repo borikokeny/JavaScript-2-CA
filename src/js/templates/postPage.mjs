@@ -6,8 +6,8 @@ export async function postTemplate() {
 
   const post = await viewPost(id);
 
-  const postContainer = document.createElement("div");
-  postContainer.classList.add("container");
+  // const postContainer = document.createElement("div");
+  // postContainer.classList.add("container");
 
   const postImage = document.querySelector("#postImageContainer");
   const postTitle = document.querySelector("#postTitle");
@@ -19,7 +19,7 @@ export async function postTemplate() {
   postTitle.innerHTML = post.data.title;
   postBody.innerText = post.data.body;
 
-  postContainer.append();
+  // postContainer.append();
 
   // const postCard = document.createElement("div");
   // postCard.classList.add("post");
