@@ -8,6 +8,7 @@ export async function register(profile) {
   });
 
   if (response.ok) {
+    alert("You are now registered")
     return await response.json();
   }
 
