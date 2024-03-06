@@ -75,6 +75,21 @@ export function postListTemplate(postData) {
   comment.style.height = "3rem";
   postCard.append(comment);
 
+
+  const authorEmail = postData.author.email;
+  console.log(authorEmail);
+
+  const user = localStorage.getItem("profile");
+  const parsedUser = JSON.parse(user);
+  const userEmail = parsedUser.email;
+
+  console.log(userEmail);
+
+  const isAuthor = postData.author.email === userEmail;
+
+  console.log({ isAuthor });
+ 
+
   return post;
 }
 
