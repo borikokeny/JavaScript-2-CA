@@ -11,17 +11,17 @@ export async function updatePost(postData) {
   const response = await authFetch(updatePostURL, {
     method: "PUT",
     headers: headers(),
-    body: JSON.stringify(postData)
-    // body: JSON.stringify({
-    //   title: postData.title,
-    //   body: postData.body,
-    //   tags: postData.tags,
-    //   media: postData.media
-
-      // tags: postData.tags.split(","),
-      // media: postData.media.split(",")
+    // body: JSON.stringify(postData)
+    body: JSON.stringify({
+      title: postData.title,
+      body: postData.body,
+      tags: postData.tags.split(","),
+      media:  {
+        "url": postData.media,
+        "alt": postData.title
+      }
     })
-  
+  })
 
   // const post = await response.json();
   // console.log(post)
