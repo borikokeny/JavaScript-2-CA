@@ -10,18 +10,12 @@
   <!-- <script src="/src/js/handlers/register.mjs" defer type="module"></script> -->
 </head>
 <body>
-  <header class="p-3 mb-0 border-bottom">
+  <!-- <header class="p-3 mb-0 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="feed.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
           <img src="/images/Urbangarden_logo.jpg" class="bi me-2" width="150" height="32">
         </a>
-        <!-- <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="seeds.html" class="nav-link px-2 link-dark">Seed and plants</a></li>
-          <li><a href="tools.html" class="nav-link px-2 link-dark">Tools</a></li>
-          <li><a href="books.html" class="nav-link px-2 link-dark">Books</a></li>
-          <li><a href="workshops.html" class="nav-link px-2 link-dark">Workshops</a></li>
-        </ul> -->
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="searchForm" role="search">
           <input type="search" class="form-control" id="searchInput" placeholder="Search..." aria-label="Search">
         </form>
@@ -37,11 +31,62 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
   <!-- <h1>This is a test</h1>
   <button class="btn btn-primary">test</button>  -->
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-0 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
+        <div class="pb-1">
+          <h1 class="display-4 fw-bold lh-1">Welcome to Urban Garden</h1>
+          <p class="lead">Meet your people of interest, gain ideas, exchange experience! Sell and buy seeds, rent your tools or just breathe and refuel your soul in this creative and peaceful community. </p>
+        </div>
+          <div class="col-md-10 mx-auto col-lg-12">
+            <!-- <form action="/profile.html" class="p-4 p-md-5 border rounded-3 bg-light"> -->
+            <form id="registerForm" class="p-4 p-md-5 border rounded-3 bg-light">
+              <div class="mb-3">
+                  <label class="form-label mb-1">Name</label>
+                  <input type="text" name="name" pattern="^[\w]+$" title="Username can only contain upper and lower case letters, numbers and underscore. Example: myUser_123" class="form-control" maxlength="20" placeholder="Name" required>
+              </div>
 
-  <form id="registerForm" class="rounded-3 bg-body-tertiary">
+              <div class="mb-3">
+                <label class="mb-1">Email address</label>
+                <input type="email" name="email" class="form-control" 
+                id="validationDefault01" pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @(stud).noroff.no domains are allowed" placeholder="Email address" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="mb-1">Password</label>
+                <input type="password" name="password" class="form-control"   minlength="8" placeholder="Password" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="mb-1">Avatar</label>
+                <input type="url" name="avatar" class="form-control" placeholder="Avatar's url">
+              </div>
+
+              <div class="col-12">
+                <button id="regButton" class="btn btn-warning" type="submit">Create an account</button>
+              </div>
+            </form>
+          </div>
+        <p class="mt-3">Already have an account?<strong><a href="../login/index.html"> Log in</a></strong></p>
+      </div>
+      <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" src="/images/Hero_1.jpg" alt="" width="720">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- <form id="registerForm" class="rounded-3 bg-body-tertiary">
     <div>
       <label>Name</label>
       <input type="text" name="name" pattern="^[\w]+$" title="Username can only contain upper and lower case letters, numbers and underscore. Example: myUser_123" class="form-control" maxlength="20" required>
@@ -73,21 +118,15 @@
     </div> -->
 
     <!-- <button><a href="/profile/login/">Register</a></button> -->
-    <button>Register</button>
+    <!-- <button>Register</button> -->
 
 
-  </form>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  </form> -->
+  <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
     <a href="feed.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
       <img src="/images/Urbangarden_logo.jpg" class="bi me-2" width="150" height="32">
     </a>
-    <!-- <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item"><a href="feed.html" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="profile.html" class="nav-link px-2 text-muted">My Page</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-    </ul> -->
-  </footer> 
+  </footer>  -->
 </body>
 </html> 
