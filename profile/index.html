@@ -35,8 +35,39 @@
     </div>
   </div>
 </header>
-  <h1>This is a test</h1>
-  <button class="btn btn-primary">test</button>
+  <!-- <h1>This is a test</h1>
+  <button class="btn btn-primary">test</button> -->
+  <div id="profileContainer"></div>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+        <form id="createPost">
+          <div class="form-group">
+            <label for="">Title</label>
+            <input class="form-control" type="text" name="title" required maxlength="100">
+          </div>
+    
+          <div class="form-group">
+            <label for="">Body</label>
+            <textarea class="form-control" type="text" name="body" required maxlength="500"></textarea>
+          </div>
+    
+          <div class="form-group">
+            <label for="">Tags</label>
+            <input class="form-control" type="text" name="tags">
+          </div>
+    
+          <div class="form-group">
+            <label for="">Media</label>
+            <input class="form-control" type="url" name="media">
+          </div>
+    
+          <button class="btn btn-success">Create Post</button>
+    
+        </form>
+      </div>
+    </div>
+   </div> 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
     <a href="feed.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">

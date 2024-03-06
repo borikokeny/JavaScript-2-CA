@@ -5,6 +5,7 @@ import * as postMethods from "./api/posts/index.mjs";
 // import { renderPostTemplates } from "./templates/index.mjs";
 // import { setCreatePostFormListener } from "./handlers/createPost.mjs";
 import * as listeners from "./handlers/index.mjs";
+import * as profile from "./api/profile/index.mjs";
 
 
 // ezt majd rendbe kell tenni!!!
@@ -27,7 +28,7 @@ templates.postTemplate()
 // posts.updatePost()
 // posts.viewPost(679).then(console.log)
 // posts.viewPosts().then(console.log)
-// postMethods.removePost(650)
+// postMethods.removePost(797)
 
 
 

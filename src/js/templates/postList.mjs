@@ -1,10 +1,22 @@
 export function postListTemplate(postData) {
 
+  const postFeedPage = document.createElement("div");
+  postFeedPage.classList.add("container");
+
+  const postFeedRows = document.createElement("div");
+  postFeedRows.classList.add("row");
+
+  postFeedPage.append(postFeedRows);
+
+  // const userListContainer
+
   const post = document.createElement("a");
-  post.classList.add("shadow-sm", "row", "g-0", "border", "rounded", "overflow-hidden", "flex-md-row", "mb-4", "shadow-sm", "h-md-250", "position-relative");
+  post.classList.add("shadow-sm", "col-6", "row", "g-0", "border", "rounded", "overflow-hidden", "flex-md-row", "mb-4", "shadow-sm", "h-md-250", "position-relative");
   post.href = `../post/?id=${postData.id}`;
   post.style.textDecoration = "none";
   post.style.color = "black";
+
+  postFeedRows.append(post);
 
 
   const postCard = document.createElement("div");

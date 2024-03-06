@@ -18,10 +18,11 @@ export function setCreatePostFormListener() {
       // }
 
       createPost(post)
+      console.log(post);
     })
   }
   // const posts = ;
-  // console.log(posts);
+
 }
 
 //15:09
