@@ -6,8 +6,8 @@ export async function postTemplate() {
 
   const post = await viewPost(id);
 
-  // const postContainer = document.createElement("div");
-  // postContainer.classList.add("container");
+  const postContainer = document.querySelector(".postContainer");
+  postContainer.classList.add("container");
 
   const postImage = document.querySelector("#postImageContainer");
   const postTitle = document.querySelector("#postTitle");
@@ -18,6 +18,35 @@ export async function postTemplate() {
   postImage.style.width = "100%";
   postTitle.innerHTML = post.data.title;
   postBody.innerText = post.data.body;
+
+  // postContainer.append(postImage, postTitle, postBody);
+  console.log(post.data.body);
+
+  // post.append(postContainer)
+  const user = localStorage.getItem("profile");
+  const parsedUser = JSON.parse(user);
+  const userEmail = parsedUser.email;
+
+  console.log(userEmail);
+  // const authorEmail = post.author.email;
+  console.log(post.data.author.email);
+
+  const isAuthor = post.data.author.email === userEmail;
+
+  console.log({ isAuthor });
+  const editButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
+  editButton.innerHTML = "Update Post";
+  deleteButton.innerHTML = "Delete Post";
+  postContainer.append(postImage, postTitle, postBody);
+
+  console.log(postContainer);
+
+  if (isAuthor === true) {
+    postContainer.append(editButton, deleteButton);
+  }
+
+
 
   // postContainer.append();
 

@@ -15,7 +15,7 @@ export async function viewPost(id) {
     throw new Error("GET request requires an ID");
   } 
   
-  const viewPostURL = `${API_HOST_URL}${API_POSTS}/${id}`;
+  const viewPostURL = `${API_HOST_URL}${API_POSTS}/${id}/?_author=true`;
 
   const response = await authFetch(viewPostURL);
 

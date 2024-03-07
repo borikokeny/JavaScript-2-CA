@@ -87,7 +87,18 @@ export function postListTemplate(postData) {
 
   const isAuthor = postData.author.email === userEmail;
 
+  const editButton = document.createElement("button");
+  const deleteButton = document.createElement("button");
+  editButton.innerHTML = "Update Post";
+  deleteButton.innerHTML = "Delete Post";
+  editButton.classList.add("me-2", "btn", "btn-warning");
+  deleteButton.classList.add("btn", "btn-warning");
+  
+
   console.log({ isAuthor });
+  if (isAuthor === true) {
+    postCard.append(editButton, deleteButton);
+  }
  
 
   return post;
