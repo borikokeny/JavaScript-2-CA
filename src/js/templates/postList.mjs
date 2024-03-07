@@ -65,7 +65,9 @@ export function postListTemplate(postData) {
     img.alt =  `Image from ${postData.media.alt}`;
     
     postCard.append(userContainer, title, body, img)
-  }
+  } 
+
+
 
 
 
@@ -74,31 +76,35 @@ export function postListTemplate(postData) {
   comment.placeholder = "write a comment...";
   comment.style.height = "3rem";
   postCard.append(comment);
-
+  if(!postData.media) {
+    comment.style.display = "none";
+    
+  }
 
   const authorEmail = postData.author.email;
-  console.log(authorEmail);
+  // console.log(authorEmail);
 
   const user = localStorage.getItem("profile");
   const parsedUser = JSON.parse(user);
   const userEmail = parsedUser.email;
 
-  console.log(userEmail);
+  // console.log(userEmail);
 
-  const isAuthor = postData.author.email === userEmail;
+  // const isAuthor = postData.author.email === userEmail;
 
-  const editButton = document.createElement("button");
-  const deleteButton = document.createElement("button");
-  editButton.innerHTML = "Update Post";
-  deleteButton.innerHTML = "Delete Post";
-  editButton.classList.add("me-2", "btn", "btn-warning");
-  deleteButton.classList.add("btn", "btn-warning");
+  // const editButton = document.createElement("button");
+  // const deleteButton = document.createElement("button");
+  // editButton.innerHTML = "Update Post";
+  // deleteButton.innerHTML = "Delete Post";
+  // editButton.classList.add("me-2", "btn", "btn-warning");
+  // deleteButton.classList.add("btn", "btn-warning");
+  
   
 
-  console.log({ isAuthor });
-  if (isAuthor === true) {
-    postCard.append(editButton, deleteButton);
-  }
+  // // console.log({ isAuthor });
+  // if (isAuthor === true) {
+  //   postCard.append(editButton, deleteButton);
+  // }
  
 
   return post;

@@ -35,12 +35,14 @@ export async function postTemplate() {
   const isAuthor = post.data.author.email === userEmail;
 
   // console.log({ isAuthor });
-  const editButton = document.createElement("button");
+  const editButton = document.createElement("a");
   const deleteButton = document.createElement("button");
   editButton.innerHTML = "Update Post";
   deleteButton.innerHTML = "Delete Post";
-  deleteButton.classList.add("deletePost");
+  deleteButton.classList.add("deletePost", "btn", "btn-warning", "m-1");
   deleteButton.id = "deleteButton";
+  editButton.classList.add("btn", "btn-warning", "m-1");
+  editButton.href = `../post/update/?id=${id}`;
   postContainer.append(postImage, postTitle, postBody);
 
   // console.log(postContainer);
@@ -59,7 +61,10 @@ export async function postTemplate() {
        removePost(id);
     }
 });
+
 }
+
+
 
 
 
