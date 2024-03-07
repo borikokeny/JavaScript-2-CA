@@ -1,4 +1,5 @@
 import { viewPost } from "../api/posts/view.mjs";
+import { removePost } from "../api/posts/delete.mjs";
 
 export async function postTemplate() {
   const url = new URL(location.href);
@@ -20,57 +21,47 @@ export async function postTemplate() {
   postBody.innerText = post.data.body;
 
   // postContainer.append(postImage, postTitle, postBody);
-  console.log(post.data.body);
+  // console.log(post.data.body);
 
   // post.append(postContainer)
   const user = localStorage.getItem("profile");
   const parsedUser = JSON.parse(user);
   const userEmail = parsedUser.email;
 
-  console.log(userEmail);
+  // console.log(userEmail);
   // const authorEmail = post.author.email;
-  console.log(post.data.author.email);
+  // console.log(post.data.author.email);
 
   const isAuthor = post.data.author.email === userEmail;
 
-  console.log({ isAuthor });
+  // console.log({ isAuthor });
   const editButton = document.createElement("button");
   const deleteButton = document.createElement("button");
   editButton.innerHTML = "Update Post";
   deleteButton.innerHTML = "Delete Post";
+  deleteButton.classList.add("deletePost");
+  deleteButton.id = "deleteButton";
   postContainer.append(postImage, postTitle, postBody);
 
-  console.log(postContainer);
+  // console.log(postContainer);
 
   if (isAuthor === true) {
     postContainer.append(editButton, deleteButton);
   }
 
+  console.log(post.data.id);
 
-
-  // postContainer.append();
-
-  // const postCard = document.createElement("div");
-  // postCard.classList.add("post");
-  // postCard.innerText = post.data.title;
-  // const img = document.createElement("img");
-  //   img.src = post.media.url;
-  //   img.alt =  `Image from ${post.media.alt}`;
-  //   postCard.append(img)
-
-  // if(post.media) {
-  //   const img = document.createElement("img");
-  //   img.src = post.media.url;
-  //   img.alt =  `Image from ${post.media.alt}`;
-  //   postCard.append(img)
-  // }
-  // const button = document.createElement("button");
-  // post.append(button);
-
-  // button.addEventListener("click", () => console.log(postData))
-
-  // return post;
+  deleteButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    alert("8");
+    const confirmation = confirm("Are you sure you want to delete this post?");
+    if (confirmation) {
+       removePost(id);
+    }
+});
 }
+
+
 
 
 
