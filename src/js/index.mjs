@@ -21,6 +21,7 @@ listeners.setLoginFormListener()
 listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()
 listeners.setUpdatePostListener()
+listeners.search()
 templates.postTemplate()
 profile.viewProfile()
 

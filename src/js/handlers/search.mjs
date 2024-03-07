@@ -1,32 +1,49 @@
-// import { viewPosts } from "../api/posts/view.mjs";
-// import { renderPostListTemplate } from "../templates/postList.mjs";
+import { viewPosts } from "../api/posts/view.mjs";
+import { renderPostListTemplate } from "../templates/postList.mjs";
 
-// export async function search() {
-//   const posts = await viewPosts();
+export async function search() {
+  const postsToFilter = await viewPosts();
 
-//   const searchForm = document.querySelector("#searchForm");
-//   const searchInput = document.querySelector("#searchInput");
+  const form = document.querySelector("#searchForm");
+  const search = document.querySelector("#searchInput");
 
-//   if (searchForm) {
-//     searchForm.addEventListener("submit", (e) => {
-//       e.preventDefault();
-//  console.log(e);
-//       const searchValue = searchInput.value.trim();
+  console.log(postsToFilter);
 
-//       const filteredPosts = posts.filter((post) => {
-//         if (!post.title || !post.body) {
-//           return false;
-//         }
-//         return post.title.toLowerCase().includes(searchValue) || post.body.toLowerCase().includes(searchValue);
-//       });
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const searchValue = search.value.trim();
+      console.log(searchValue);
 
-//       const searchContainer = document.querySelector("#searchContainer");
-//       searchContainer.innerHTML = "";
-//       renderPostListTemplate(filteredPosts, searchContainer);
+      if (searchValue === "") {
+        searchResults([]);
+        return;
+      }
+     //postsToFilter.filter is not a function
+      const postsFiltered = postsToFilter.filter((postData) => {
+        const title = postData.title.toLowerCase();
+        const body = postData.body.toLowerCase();
+        console.log(postsFiltered);
+        console.log(title);
 
-//     });
-//   }
- 
-// }
+        return title.includes(searchValue) || body.includes(searchValue);
+      });
 
-// search();
+      searchResults(postsFiltered);
+      console.log(postsFiltered);
+    
+    });
+  }
+}
+
+function searchResults(postsFiltered) {
+  const searchContainer = document.querySelector("#search-result"); 
+  searchContainer.innerHTML = "";
+
+  if (postsFiltered.length === 0) {
+    return error;
+  } else {
+    renderPostListTemplate(postsFiltered, searchContainer);
+  }
+}
