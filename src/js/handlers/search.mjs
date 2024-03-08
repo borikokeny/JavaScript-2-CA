@@ -1,4 +1,5 @@
 import { viewPosts } from "../api/posts/view.mjs";
+import { getSearchedPosts } from "../api/posts/search.mjs";
 import { renderPostListTemplate } from "../templates/postList.mjs";
 
 export async function search() {
@@ -21,9 +22,9 @@ export async function search() {
         return;
       }
      //postsToFilter.filter is not a function
-      const postsFiltered = postsToFilter.filter((postData) => {
-        const title = postData.title.toLowerCase();
-        const body = postData.body.toLowerCase();
+      const postsFiltered = postsToFilter.filter((posts) => {
+        const title = posts.title.toLowerCase();
+        const body = posts.body.toLowerCase();
         console.log(postsFiltered);
         console.log(title);
 

@@ -6,7 +6,6 @@ import * as postMethods from "./api/posts/index.mjs";
 // import { setCreatePostFormListener } from "./handlers/createPost.mjs";
 import * as listeners from "./handlers/index.mjs";
 import * as profile from "./api/profile/index.mjs";
-import { createdCounter } from "./api/utility/counter.mjs";
 
 
 // ezt majd rendbe kell tenni!!!
@@ -17,7 +16,7 @@ import { createdCounter } from "./api/utility/counter.mjs";
 // } else if (path === '/profile/register/') {
 //   setRegisterFormListener()
 // }
-createdCounter()
+
 listeners.setLoginFormListener()
 listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()
@@ -64,7 +63,7 @@ async function postListTemplate() {
   // const post = posts.data.pop();
   // const post = posts.data[79];
   const container = document.querySelector("#posts");
-  container.classList.add("container");
+  // container.classList.add("container");
   templates.renderPostListTemplate(posts, container);
 }
 

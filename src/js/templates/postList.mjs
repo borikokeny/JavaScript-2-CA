@@ -42,7 +42,7 @@ export function postListTemplate(postData) {
   userNameContainer.classList.add("col-md-11", "order-md-2");
 
   const avatar = document.createElement("img");
-  const userName = document.createElement("p");
+  const userName = document.createElement("h6");
   
   avatar.src = postData.author.avatar.url;
   avatar.classList.add("rounded-circle", "m-2");
@@ -50,11 +50,6 @@ export function postListTemplate(postData) {
   avatar.style.height = "3rem";
   userName.innerText = postData.author.name;
   userName.classList.add("mt-2", "ms-3");
-
-
-
-
-  
 
   avatarContainer.append(avatar);
   userNameContainer.append(userName);
@@ -65,15 +60,15 @@ export function postListTemplate(postData) {
     const today = new Date();
     const createdDate = new Date(postData.created);
 
+
+   
+    // console.log(createdDate.toISOString());
+
+
+
     const timeCount = today - createdDate;
     const hoursToDate = Math.ceil((timeCount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    // const hoursCount = Math.ceil(timeCount / (1000 * 60 * 60));
     const daysCount = Math.floor(timeCount / (1000 * 60 * 60 * 24));
-
-
-    // const createdWatch = new Date(postData.created);
-    // createdCounter(createdWatch, postedAgo);
-  
   
     created.classList.add("ms-3");
     created.innerText = `Posted ${daysCount} day(s) and ${hoursToDate} hours ago`;
@@ -92,18 +87,15 @@ export function postListTemplate(postData) {
     postCard.append(userContainer, title, body, img)
   } 
 
-
-
-
-
   const comment = document.createElement("input");
   comment.classList.add("col-6", "m-2", "rounded");
   comment.placeholder = "write a comment...";
   comment.style.height = "3rem";
   postCard.append(comment);
+
   if(!postData.media) {
     comment.style.display = "none";
-    
+    post.style.display = "none";
   }
 
   const authorEmail = postData.author.email;
