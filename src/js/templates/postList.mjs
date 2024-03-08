@@ -13,8 +13,9 @@ export function postListTemplate(postData) {
   // const userListContainer
 
   const post = document.createElement("a");
-  post.classList.add("shadow-sm", "col-6", "row", "g-0", "border", "rounded", "overflow-hidden", "flex-md-row", "mb-4", "shadow-sm", "h-md-250", "position-relative");
+  post.classList.add("shadow-sm", "col", "g-0", "border", "overflow-hidden", "shadow-sm");
   post.href = `../post/?id=${postData.id}`;
+  post.style.height = "10rem";
   post.style.textDecoration = "none";
   post.style.color = "black";
 
@@ -22,11 +23,11 @@ export function postListTemplate(postData) {
 
 
   const postCard = document.createElement("div");
-  // post.classList.add("posts");
+  
   
   post.append(postCard);
  
-  // post.innerText = postData.title;
+
   const userContainer = document.createElement("div");
   userContainer.classList.add("row", "featurette");
   const title = document.createElement("h2");
@@ -51,8 +52,8 @@ export function postListTemplate(postData) {
   userName.innerText = postData.author.name;
   userName.classList.add("mt-2", "ms-3");
 
-  avatarContainer.append(avatar);
-  userNameContainer.append(userName);
+  avatarContainer.append();
+  userNameContainer.append();
   userContainer.append(avatarContainer, userNameContainer);
 
   if(postData.created) {
@@ -73,25 +74,27 @@ export function postListTemplate(postData) {
     created.classList.add("ms-3");
     created.innerText = `Posted ${daysCount} day(s) and ${hoursToDate} hours ago`;
     
-    userNameContainer.append(created);
+    userNameContainer.append();
   }
   
   if(postData.media) {
     const img = document.createElement("img");
-    img.classList.add("img-fluid", "w-100", "bd-placeholder-img", "card-img-top", "mb-4"); //ezek eddig semmit se mukodnek
-    img.style.width = "100%"; //csak ez
+    img.classList.add("img-fluid"); //ezek eddig semmit se mukodnek
+    // img.style.width = "100%"; //csak ez
     // img.style.height = "15rem";
+    // img.style.height = "10rem";
+    img.style.objectFit = "cover";
     img.src = postData.media.url ?? `/images/img-placeholder.png`;
     img.alt =  `Image from ${postData.media.alt}`;
     
-    postCard.append(userContainer, title, body, img)
+    postCard.append(userContainer, img)
   } 
 
   const comment = document.createElement("input");
   comment.classList.add("col-6", "m-2", "rounded");
   comment.placeholder = "write a comment...";
   comment.style.height = "3rem";
-  postCard.append(comment);
+  postCard.append();
 
   if(!postData.media) {
     comment.style.display = "none";
