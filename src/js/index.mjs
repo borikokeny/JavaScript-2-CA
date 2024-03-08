@@ -6,6 +6,7 @@ import * as postMethods from "./api/posts/index.mjs";
 // import { setCreatePostFormListener } from "./handlers/createPost.mjs";
 import * as listeners from "./handlers/index.mjs";
 import * as profile from "./api/profile/index.mjs";
+import { createdCounter } from "./api/utility/counter.mjs";
 
 
 // ezt majd rendbe kell tenni!!!
@@ -16,7 +17,7 @@ import * as profile from "./api/profile/index.mjs";
 // } else if (path === '/profile/register/') {
 //   setRegisterFormListener()
 // }
-
+createdCounter()
 listeners.setLoginFormListener()
 listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()

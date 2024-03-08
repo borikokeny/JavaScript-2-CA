@@ -1,3 +1,5 @@
+// import { createdCounter } from "../api/utility/counter.mjs";
+
 export function postListTemplate(postData) {
 
   const postFeedPage = document.createElement("div");
@@ -41,20 +43,43 @@ export function postListTemplate(postData) {
 
   const avatar = document.createElement("img");
   const userName = document.createElement("p");
-  const created = document.createElement("p");
+  
   avatar.src = postData.author.avatar.url;
   avatar.classList.add("rounded-circle", "m-2");
   avatar.style.width = "3rem";
   avatar.style.height = "3rem";
   userName.innerText = postData.author.name;
   userName.classList.add("mt-2", "ms-3");
-  created.innerText = postData.created;
-  created.classList.add("ms-3");
-  created.innerText = `Posted ${created.innerText} hours ago`;
+
+
+
+
+  
 
   avatarContainer.append(avatar);
-  userNameContainer.append(userName, created);
+  userNameContainer.append(userName);
   userContainer.append(avatarContainer, userNameContainer);
+
+  if(postData.created) {
+    const created = document.createElement("p");
+    const today = new Date();
+    const createdDate = new Date(postData.created);
+
+    const timeCount = today - createdDate;
+    const hoursToDate = Math.ceil((timeCount % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    // const hoursCount = Math.ceil(timeCount / (1000 * 60 * 60));
+    const daysCount = Math.floor(timeCount / (1000 * 60 * 60 * 24));
+
+
+    // const createdWatch = new Date(postData.created);
+    // createdCounter(createdWatch, postedAgo);
+  
+  
+    created.classList.add("ms-3");
+    created.innerText = `Posted ${daysCount} day(s) and ${hoursToDate} hours ago`;
+    
+    userNameContainer.append(created);
+  }
   
   if(postData.media) {
     const img = document.createElement("img");
