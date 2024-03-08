@@ -3,7 +3,7 @@
 export function postListTemplate(postData) {
 
   const postFeedPage = document.createElement("div");
-  postFeedPage.classList.add("container");
+  postFeedPage.classList.add("container", "mb-2");
 
   const postFeedRows = document.createElement("div");
   postFeedRows.classList.add("row");
@@ -11,35 +11,41 @@ export function postListTemplate(postData) {
   postFeedPage.append(postFeedRows);
 
   // const userListContainer
-
+  const emptyPost = document.createElement("div");
+  emptyPost.classList.add("col2-3");
   const post = document.createElement("a");
-  post.classList.add("shadow-sm", "col-6", "row", "g-0", "border", "rounded", "overflow-hidden", "flex-md-row", "mb-4", "shadow-sm", "h-md-250", "position-relative");
+  post.classList.add("shadow-sm", "card",  "border", "rounded",  "mb-4", "shadow-sm", "h-md-250");
   post.href = `../post/?id=${postData.id}`;
   post.style.textDecoration = "none";
   post.style.color = "black";
 
-  postFeedRows.append(post);
+  // postFeedRows.append(emptyPost, post);
 
 
   const postCard = document.createElement("div");
+  // postCard.classList.add("col-6")
   // post.classList.add("posts");
   
   post.append(postCard);
  
   // post.innerText = postData.title;
   const userContainer = document.createElement("div");
-  userContainer.classList.add("row", "featurette");
+  userContainer.classList.add("row", "border","ms-0", "me-0");
+  userContainer.style
   const title = document.createElement("h2");
   const body = document.createElement("p");
   title.innerText = postData.title;
-  title.classList.add("ms-2");
+  title.classList.add("ms-2", "mt-2");
   body.innerText = postData.body;
   body.classList.add("mb-4", "ms-2");
+  body.style.overflow = "elipsis";
+  
   
   const avatarContainer = document.createElement("div");
   const userNameContainer = document.createElement("div");
-  avatarContainer.classList.add("col-md-1", "order-md-1");
-  userNameContainer.classList.add("col-md-11", "order-md-2");
+  avatarContainer.classList.add("col-2", "order-md-1");
+  userNameContainer.classList.add("col-8", "order-md-2", "ms-3");
+ 
 
   const avatar = document.createElement("img");
   const userName = document.createElement("h6");
@@ -79,16 +85,22 @@ export function postListTemplate(postData) {
   if(postData.media) {
     const img = document.createElement("img");
     img.classList.add("img-fluid", "w-100", "bd-placeholder-img", "card-img-top", "mb-4"); //ezek eddig semmit se mukodnek
-    img.style.width = "100%"; //csak ez
-    // img.style.height = "15rem";
-    img.src = postData.media.url ?? `/images/img-placeholder.png`;
-    img.alt =  `Image from ${postData.media.alt}`;
+   
     
-    postCard.append(userContainer, title, body, img)
+    img.src = postData.media.url ?? `/images/img-placeholder.png`;
+
+    img.alt =  `Image from ${postData.media.alt}`;
+    // img.style.width = "100%"; //csak ez
+    // img.style.height = "15rem";
+    img.style.objectFit = "cover";
+    const imgContainer = document.createElement("div");
+    imgContainer.style.height = "225";
+    imgContainer.append(img);
+    postCard.append(userContainer, title, body, imgContainer)
   } 
 
   const comment = document.createElement("input");
-  comment.classList.add("col-6", "m-2", "rounded");
+  comment.classList.add("col-11", "m-2", "rounded");
   comment.placeholder = "write a comment...";
   comment.style.height = "3rem";
   postCard.append(comment);

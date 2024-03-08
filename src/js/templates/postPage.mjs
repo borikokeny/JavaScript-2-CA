@@ -8,12 +8,21 @@ export async function postTemplate() {
   const post = await viewPost(id);
 
   const postContainer = document.querySelector(".postContainer");
-  postContainer.classList.add("container");
+  postContainer.classList.add("container", "border");
 
+  const userContainer = document.createElement("div");
   const profileContainer = document.createElement("div");
+  const userNameContainer = document.createElement("div");
+  const postImageContainer = document.createElement("div");
+  postImageContainer.classList.add("ms-n2");
+  userContainer.classList.add("row", "border");
+  profileContainer.classList.add("col-2", "order-md-1");
+  userNameContainer.classList.add("col-8", "order-md-2", "ms-3");
   const avatar = document.createElement("img");
   const userName = document.createElement("p");
   const created = document.createElement("p");
+  
+ 
   avatar.src = post.data.author.avatar.url;
   avatar.classList.add("rounded-circle", "m-2");
   avatar.style.width = "3rem";
@@ -24,38 +33,31 @@ export async function postTemplate() {
   // created.classList.add("ms-3");
   created.innerText = `Posted ${created.innerText} hours ago`;
 
-
-  profileContainer.append(avatar, userName, created);
-  // profileContainer.append(avatar, userName, created);
-  postContainer.append(profileContainer);
-
+  profileContainer.append(avatar);
+  userNameContainer.append(userName, created);
+  userContainer.append(profileContainer, userNameContainer);
 
 
-  const postImage = document.querySelector("#postImageContainer");
-  const postTitle = document.querySelector("#postTitle");
-  const postBody = document.querySelector("#postBody");
+  const postImage = document.createElement("img");
+  const postTitle = document.createElement("h2");
+  const postBody = document.createElement("p");
   // document.title = post.data.title;
   postImage.alt = `Image from ${post.data.media.alt}`;
   postImage.src = post.data.media.url ?? `/images/img-placeholder.png`;
+  postImage.classList.add("ms-0");
   postImage.style.width = "100%";
+  postImage.style.objectFit = "cover";
   postTitle.innerHTML = post.data.title;
   postBody.innerText = post.data.body;
 
-  // postContainer.append(postImage, postTitle, postBody);
-  // console.log(post.data.body);
+  postImageContainer.append(postImage);
 
-  // post.append(postContainer)
   const user = localStorage.getItem("profile");
   const parsedUser = JSON.parse(user);
   const userEmail = parsedUser.email;
 
-  // console.log(userEmail);
-  // const authorEmail = post.author.email;
-  // console.log(post.data.author.email);
-
   const isAuthor = post.data.author.email === userEmail;
 
-  // console.log({ isAuthor });
   const editButton = document.createElement("a");
   const deleteButton = document.createElement("button");
   editButton.innerHTML = "Update Post";
@@ -64,7 +66,7 @@ export async function postTemplate() {
   deleteButton.id = "deleteButton";
   editButton.classList.add("btn", "btn-warning", "m-1");
   editButton.href = `../post/update/?id=${id}`;
-  postContainer.append(postImage, postTitle, postBody);
+  postContainer.append(userContainer,postImageContainer, postTitle, postBody);
 
   // console.log(postContainer);
 
@@ -84,24 +86,3 @@ export async function postTemplate() {
 });
 
 }
-
-
-
-
-
-
-
-
-
-// export function renderPostPageTemplate(postData, parent) {
-//   // parent.innerHTML = postTemplateA(postData)
-
-//   parent.append(postTemplate(postData))
-// }
-
-
-
-
-// export function renderPostTemplates(postDataList, parent) {
-//   parent.append(...postDataList.data.map(postTemplateB))
-// }
