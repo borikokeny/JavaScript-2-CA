@@ -8,7 +8,7 @@ export async function profileTemplate() {
   const profile = await viewProfile(name);
 
   const profileContainer = document.querySelector("#profileContainer");
-  const profileImage = document.querySelector("#profileImage");
+  const profileImage = document.querySelector("#avatar");
   profileImage.src = profile.data.avatar.url;
   profileImage.style.width = "100%";
   const profileName = document.createElement("h3");

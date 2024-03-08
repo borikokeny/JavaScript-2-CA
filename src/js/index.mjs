@@ -22,7 +22,9 @@ listeners.setRegisterFormListener()
 listeners.setCreatePostFormListener()
 listeners.setUpdatePostListener()
 listeners.search()
+listeners.setAvatar()
 templates.postTemplate()
+templates.profileTemplate()
 profile.viewProfile()
 
 
