@@ -10,6 +10,27 @@ export async function postTemplate() {
   const postContainer = document.querySelector(".postContainer");
   postContainer.classList.add("container");
 
+  const profileContainer = document.createElement("div");
+  const avatar = document.createElement("img");
+  const userName = document.createElement("p");
+  const created = document.createElement("p");
+  avatar.src = post.data.author.avatar.url;
+  avatar.classList.add("rounded-circle", "m-2");
+  avatar.style.width = "3rem";
+  avatar.style.height = "3rem";
+  userName.innerText = post.data.author.name;
+  // userName.classList.add("mt-2", "ms-3");
+  created.innerText = post.data.created;
+  // created.classList.add("ms-3");
+  created.innerText = `Posted ${created.innerText} hours ago`;
+
+
+  profileContainer.append(avatar, userName, created);
+  // profileContainer.append(avatar, userName, created);
+  postContainer.append(profileContainer);
+
+
+
   const postImage = document.querySelector("#postImageContainer");
   const postTitle = document.querySelector("#postTitle");
   const postBody = document.querySelector("#postBody");
@@ -51,7 +72,7 @@ export async function postTemplate() {
     postContainer.append(editButton, deleteButton);
   }
 
-  console.log(post.data.id);
+  // console.log(post.data.id);
 
   deleteButton.addEventListener("click", function(e) {
     e.preventDefault();
