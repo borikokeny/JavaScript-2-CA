@@ -9,49 +9,56 @@
   <script src="/src/js/index.mjs" defer type="module"></script>
 </head>
 <body>
-  <header class="p-3 mb-0 border-bottom">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="../posts/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <img src="/images/Urbangarden_logo.jpg" class="bi me-2" width="150" height="32">
-        </a>
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="seeds.html" class="nav-link px-2 link-dark" style="display: none">Seed and plants</a></li>
-          <li><a href="tools.html" class="nav-link px-2 link-dark" style="display: none">Tools</a></li>
-          <li><a href="books.html" class="nav-link px-2 link-dark" style="display: none">Books</a></li>
-          <li><a href="workshops.html" class="nav-link px-2 link-dark" style="display: none">Workshops</a></li>
-        </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="searchForm" role="search">
-          <input type="search" class="form-control" id="searchInput" placeholder="Search..." aria-label="Search">
-        </form>
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="/images/Profile-img-placeholder.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="/profile/index.html">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <header class="p-3 mb-0 border-bottom">
+          <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="../posts/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                <img src="/images/Urbangarden_logo.jpg" class="bi me-2" width="150" height="32">
+              </a>
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="seeds.html" class="nav-link px-2 link-dark" style="display: none">Seed and plants</a></li>
+                <li><a href="tools.html" class="nav-link px-2 link-dark" style="display: none">Tools</a></li>
+                <li><a href="books.html" class="nav-link px-2 link-dark" style="display: none">Books</a></li>
+                <li><a href="workshops.html" class="nav-link px-2 link-dark" style="display: none">Workshops</a></li>
+              </ul>
+              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="searchForm" role="search">
+                <input type="search" class="form-control" id="searchInput" placeholder="Search..." aria-label="Search">
+              </form>
+              <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/images/Profile-img-placeholder.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                  <li><a class="dropdown-item" href="/profile/index.html">Profile</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- <h1>This is a test</h1>
+        <button class="btn btn-primary">test</button> -->
+        <div id="post" class="postContainer">
+          <img id="postImageContainer"/>
+          <h2 id="postTitle"></h2>
+          <h6 id="postBody"></h6>
+          <!-- <button class="btn btn-primary">Update Post</button>
+          <button class="btn btn-secondary">Delete Post</button> -->
+          </div>
         </div>
+      </body>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
+        <a href="feed.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="/images/Urbangarden_logo.jpg" class="bi me-2" style="display: none" width="150" height="32">
+        </a>
+      </footer>
       </div>
     </div>
-  </header>
-  <!-- <h1>This is a test</h1>
-  <button class="btn btn-primary">test</button> -->
-  <div id="post" class="postContainer">
-    <img id="postImageContainer"/>
-    <h2 id="postTitle"></h2>
-    <h6 id="postBody"></h6>
-    <!-- <button class="btn btn-primary">Update Post</button>
-    <button class="btn btn-secondary">Delete Post</button> -->
-    </div>
   </div>
-</body>
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-  <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
-  <a href="feed.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-    <img src="/images/Urbangarden_logo.jpg" class="bi me-2" style="display: none" width="150" height="32">
-  </a>
-</footer>
+ 
 </html>

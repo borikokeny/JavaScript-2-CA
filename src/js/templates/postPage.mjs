@@ -11,11 +11,13 @@ export async function postTemplate() {
   postContainer.classList.add("container");
 
   const profileContainer = document.createElement("div");
+  profileContainer.classList.add("row");
   const avatar = document.createElement("img");
+  const textContainer = document.createElement("div");
   const userName = document.createElement("p");
   const created = document.createElement("p");
   avatar.src = post.data.author.avatar.url;
-  avatar.classList.add("rounded-circle", "m-2");
+  avatar.classList.add("rounded-circle", "m-2", "col");
   avatar.style.width = "3rem";
   avatar.style.height = "3rem";
   userName.innerText = post.data.author.name;
