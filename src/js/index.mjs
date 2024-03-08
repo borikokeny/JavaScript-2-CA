@@ -24,8 +24,8 @@ listeners.setUpdatePostListener()
 listeners.search()
 listeners.setAvatar()
 templates.postTemplate()
-templates.profileTemplate()
-profile.viewProfile()
+// templates.profileTemplate()
+// profile.viewProfile()
 
 
 // posts.createPost()
