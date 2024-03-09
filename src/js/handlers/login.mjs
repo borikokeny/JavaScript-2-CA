@@ -20,12 +20,5 @@ export function setLoginFormListener() {
       }
     })
   }
-  // const posts = ;
-  // console.log(posts);
+
 }
-
-//15:09
-// js/us/events/onAuth.js = js/handlers/login.mjs
-// js/ui/listeners/auth.js setAuthListener = js/handlers/register.mjs
-
-// talan ide johet a getPosts meghivasa, korabban az eredeti index.mjs legaljan volt es mukodott

@@ -11,19 +11,11 @@ export async function removePost(id) {
   const response = await authFetch(updatePostURL, {
     method: "DELETE",
     headers: headers()
-    // body: JSON.stringify({
-    //   title: postData.title,
-    //   body: postData.body,
-    //   tags: postData.tags,
-    //   media: postData.media
-
-      // tags: postData.tags.split(","),
-      // media: postData.media.split(",")
     })
   
-
-  // const post = await response.json();
-  // console.log(post)
+    if (response.ok) {
+      alert("Your post is deleted - go and enjoy the feed!")
+    }
 
   return await response.json();
 }

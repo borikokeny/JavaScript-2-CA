@@ -11,7 +11,6 @@ export async function updatePost(postData) {
   const response = await authFetch(updatePostURL, {
     method: "PUT",
     headers: headers(),
-    // body: JSON.stringify(postData)
     body: JSON.stringify({
       title: postData.title,
       body: postData.body,
@@ -22,9 +21,10 @@ export async function updatePost(postData) {
       }
     })
   })
-
-  // const post = await response.json();
-  // console.log(post)
+ 
+  if (response.ok) {
+    alert("Your post is updated - go and check the feed!")
+  }
 
   return await response.json();
 }
