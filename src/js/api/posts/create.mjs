@@ -7,7 +7,6 @@ export async function createPost(postData) {
   const response = await authFetch(API_HOST_URL + API_POSTS, {
     method: "POST",
     headers: headers(),
-    // body: JSON.stringify(postData)
     body: JSON.stringify({
       title: postData.title,
       body: postData.body,
@@ -18,9 +17,10 @@ export async function createPost(postData) {
       }
     })
   })
+  
+  if (response.ok) {
+    alert("Your post is ready to look at - go and enjoy the feed!")
+  }
 
-  // const post = await response.json();
-  // console.log(post)
-  // console.log(postData)
   return await response.json();
 }
