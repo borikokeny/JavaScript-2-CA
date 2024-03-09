@@ -42,7 +42,21 @@
         </header>
 
         <main>
-        <form id="filterDropdown" class="dropdown">
+          <div class="modal position-static d-block  p-4 py-md-5" tabindex="-1" role="dialog" id="modalChoice">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content rounded-3 shadow">
+                <div class="modal-body p-4 text-center">
+                  <h5 class="mb-0">You can filter your feed</h5>
+                  <!-- <p class="mb-0">You can filter your feed</p> -->
+                </div>
+                <div class="modal-footer flex-nowrap p-0">
+                  <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0 border-end" style="color: black"><strong>Newest first</strong></button>
+                  <button type="button" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 py-3 m-0 rounded-0" data-bs-dismiss="modal" style="color: black">Oldest first</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- <form id="filterDropdown" class="dropdown">
           <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sort by
           </button>
@@ -50,7 +64,7 @@
             <li><a id="newestFilter" class="dropdown-item" href="#">Newest to Oldest</a></li>
             <li><a id="oldestFilter" class="dropdown-item" href="#">Oldest to Newest</a></li>
           </ul>
-        </form>
+        </form> -->
         <div class="container">
           <div class="row">
             <div id="searchResults" class=""></div>
