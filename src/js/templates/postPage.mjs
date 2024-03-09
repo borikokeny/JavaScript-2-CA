@@ -8,18 +8,19 @@ export async function postTemplate() {
   const post = await viewPost(id);
 
   const postContainer = document.querySelector(".postContainer");
-  postContainer.classList.add("container", "border");
+  postContainer.classList.add("container");
+  postContainer.style.width = "60%";
 
   const userContainer = document.createElement("div");
   const profileContainer = document.createElement("div");
   const userNameContainer = document.createElement("div");
   const postImageContainer = document.createElement("div");
   postImageContainer.classList.add("ms-n2");
-  userContainer.classList.add("row", "border");
+  userContainer.classList.add("row");
   profileContainer.classList.add("col-2", "order-md-1");
   userNameContainer.classList.add("col-8", "order-md-2", "ms-3");
   const avatar = document.createElement("img");
-  const userName = document.createElement("p");
+  const userName = document.createElement("H3");
   const created = document.createElement("p");
   
  
@@ -48,6 +49,7 @@ export async function postTemplate() {
   postImage.style.width = "100%";
   postImage.style.objectFit = "cover";
   postTitle.innerHTML = post.data.title;
+  postTitle.classList.add("mt-3");
   postBody.innerText = post.data.body;
 
   postImageContainer.append(postImage);
@@ -64,7 +66,7 @@ export async function postTemplate() {
   deleteButton.innerHTML = "Delete Post";
   deleteButton.classList.add("deletePost", "btn", "btn-warning", "m-1");
   deleteButton.id = "deleteButton";
-  editButton.classList.add("btn", "btn-warning", "m-1");
+  editButton.classList.add("btn", "btn-warning", "m-1", "ms-0");
   editButton.href = `../post/update/?id=${id}`;
   postContainer.append(userContainer,postImageContainer, postTitle, postBody);
 
