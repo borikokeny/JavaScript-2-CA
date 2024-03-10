@@ -12,7 +12,9 @@ export async function login(profile) {
     const { accessToken, ...profile } = (await response.json()).data;
     save("token", accessToken);
     save("profile", profile);
+
     alert("You are now logged in");
+
     return profile;
   }
 
