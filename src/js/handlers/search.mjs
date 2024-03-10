@@ -29,7 +29,6 @@ async function handlerSearch(e) {
   const search = document.querySelector("#searchInput");
 
   e.preventDefault();
-  console.log(filter.value);
 
   const searchValue = search.value.trim();
   let postsToFilter;
@@ -39,17 +38,14 @@ async function handlerSearch(e) {
     postsToFilter = await getSearchedPosts(searchValue);
   }
 
-  console.log(postsToFilter);
 
   const postsFiltered = postsToFilter.data.filter((post) => {
     const today = new Date();
     const createdDate = new Date(post.created);
 
-    console.log(post);
     const daysAgo =
       (today.getTime() - createdDate.getTime()) / (1000 * 60 * 60 * 24);
 
-    console.log(daysAgo, filter.value);
     let isGoodDate = true;
 
     if (filter.value === "today" && daysAgo > 1) {
