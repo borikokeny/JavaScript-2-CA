@@ -1,13 +1,11 @@
-// import { setRegisterFormListener } from "./handlers/register.mjs";
-// import { setLoginFormListener } from "./handlers/login.mjs";
+
 import * as templates from "./templates/index.mjs";
 import * as postMethods from "./api/posts/index.mjs";
-// import { renderPostTemplates } from "./templates/index.mjs";
-// import { setCreatePostFormListener } from "./handlers/createPost.mjs";
 import * as listeners from "./handlers/index.mjs";
 import * as profile from "./api/profile/index.mjs";
+import { logout } from "./api/auth/logout.mjs";
 
-
+logout()
 // ezt majd rendbe kell tenni!!!
 // const path = location.pathname;
 
@@ -24,6 +22,7 @@ listeners.setUpdatePostListener()
 listeners.search()
 listeners.setAvatar()
 templates.postTemplate()
+
 // templates.profileTemplate()
 // profile.viewProfile()
 
@@ -35,39 +34,29 @@ templates.postTemplate()
 // postMethods.removePost(797)
 
 
-
-// async function postPageTemplate() {
-//   // const post = await postMethods.viewPosts();
-//   // const post = posts.data[741];
-//   // const post = posts.data.pop();
-//   const container = document.querySelector("#post");
-//   // templates.renderPostPageTemplate(post, container);
-// }
-
-// postPageTemplate()
-
-// async function testTemplateB() {
-//   const posts = await postMethods.viewPosts();
-//   // const post = posts.data.shift();
-//   // const post = posts.data.pop();
-//   // const post = posts.data[79];
-//   const container = document.querySelector("#post");
-//   templates.renderPostTemplates(posts, container);
-// }
-
-// testTemplateB()
-
-async function postListTemplate() {
+async function postListTemplateX() {
   const posts = await postMethods.viewPosts();
   // const post = posts.data.shift();
   // const post = posts.data.pop();
   // const post = posts.data[79];
   const container = document.querySelector("#posts");
   // container.classList.add("container");
-  templates.renderPostListTemplate(posts, container);
+  templates.renderPostListTemplate(posts.data, container);
 }
 
-postListTemplate()
+postListTemplateX()
+
+// async function searchListTemplateX() {
+//   const posts = await postMethods.getSearchedPosts();
+//   // const post = posts.data.shift();
+//   // const post = posts.data.pop();
+//   // const post = posts.data[79];
+//   const container = document.querySelector("#posts");
+//   // container.classList.add("container");
+//   templates.renderSearchListTemplate(posts, container);
+// }
+
+// searchListTemplateX()
 
 
 

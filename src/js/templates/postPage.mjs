@@ -64,9 +64,9 @@ export async function postTemplate() {
   const deleteButton = document.createElement("button");
   editButton.innerHTML = "Update Post";
   deleteButton.innerHTML = "Delete Post";
-  deleteButton.classList.add("deletePost", "btn", "btn-warning", "m-1");
+  deleteButton.classList.add("deletePost", "btn", "btn-outline-dark", "m-1");
   deleteButton.id = "deleteButton";
-  editButton.classList.add("btn", "btn-warning", "m-1", "ms-0");
+  editButton.classList.add("btn", "btn-outline-dark", "m-1", "ms-0");
   editButton.href = `../post/update/?id=${id}`;
   postContainer.append(userContainer,postImageContainer, postTitle, postBody);
 
@@ -80,7 +80,6 @@ export async function postTemplate() {
 
   deleteButton.addEventListener("click", function(e) {
     e.preventDefault();
-    alert("8");
     const confirmation = confirm("Are you sure you want to delete this post?");
     if (confirmation) {
        removePost(id);

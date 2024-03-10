@@ -90,8 +90,7 @@ export function postListTemplate(postData) {
     img.src = postData.media.url ?? `/images/img-placeholder.png`;
 
     img.alt =  `Image from ${postData.media.alt}`;
-    // img.style.width = "100%"; //csak ez
-    // img.style.height = "15rem";
+
     img.style.objectFit = "cover";
     const imgContainer = document.createElement("div");
     imgContainer.style.height = "225";
@@ -103,7 +102,7 @@ export function postListTemplate(postData) {
   comment.classList.add("col-11", "m-2", "rounded");
   comment.placeholder = "write a comment...";
   comment.style.height = "3rem";
-  postCard.append(comment);
+  postCard.append();
 
   if(!postData.media) {
     comment.style.display = "none";
@@ -111,34 +110,14 @@ export function postListTemplate(postData) {
   }
 
   const authorEmail = postData.author.email;
-  // console.log(authorEmail);
 
   const user = localStorage.getItem("profile");
   const parsedUser = JSON.parse(user);
   const userEmail = parsedUser.email;
-
-  // console.log(userEmail);
-
-  // const isAuthor = postData.author.email === userEmail;
-
-  // const editButton = document.createElement("button");
-  // const deleteButton = document.createElement("button");
-  // editButton.innerHTML = "Update Post";
-  // deleteButton.innerHTML = "Delete Post";
-  // editButton.classList.add("me-2", "btn", "btn-warning");
-  // deleteButton.classList.add("btn", "btn-warning");
-  
-  
-
-  // // console.log({ isAuthor });
-  // if (isAuthor === true) {
-  //   postCard.append(editButton, deleteButton);
-  // }
  
-
   return post;
 }
 
 export function renderPostListTemplate(postDataList, parent) {
-  parent.append(...postDataList.data.map(postListTemplate))
+  parent.append(...postDataList.map(postListTemplate))
 }
