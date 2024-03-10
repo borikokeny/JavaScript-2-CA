@@ -1,85 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Post</title>
-  <link rel="stylesheet" href="/dist/css/index.css">
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="/src/js/index.mjs" defer type="module"></script>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-10">
-        <header class="p-3 mb-0 border-bottom">
-          <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href="../../posts/index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="/images/Urbangarden_logo.jpg" class="bi me-2" width="150" height="32">
-              </a>
-              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="seeds.html" class="nav-link px-2 link-dark" style="display: none">Seed and plants</a></li>
-                <li><a href="tools.html" class="nav-link px-2 link-dark" style="display: none">Tools</a></li>
-                <li><a href="books.html" class="nav-link px-2 link-dark" style="display: none">Books</a></li>
-                <li><a href="workshops.html" class="nav-link px-2 link-dark" style="display: none">Workshops</a></li>
-              </ul>
-              <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="searchForm" role="search">
-                <input type="search" class="form-control" id="searchInput" placeholder="Search..." aria-label="Search">
-              </form>
-              <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img id="avatar" src="/images/Profile-img-placeholder.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Garden | Edit Post</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="/src/js/index.mjs" defer type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-10">
+          <header class="p-3 mb-0 border-bottom">
+            <div class="container">
+              <div
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+              >
+                <a
+                  href="../../posts/index.html"
+                  class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+                >
+                  <img
+                    src="/images/Urbangarden_logo.jpg"
+                    class="bi me-2"
+                    width="150"
+                    height="32"
+                  />
                 </a>
-                <ul class="dropdown-menu text-small">
-                  <li><a class="dropdown-item" href="/profile/index.html">Profile</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" id="logOut" href="../../profile/register/index.html">Sign out</a></li>
+                <ul
+                  class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+                >
+                  <li>
+                    <a
+                      href="seeds.html"
+                      class="nav-link px-2 link-dark"
+                      style="display: none"
+                      >Seed and plants</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="tools.html"
+                      class="nav-link px-2 link-dark"
+                      style="display: none"
+                      >Tools</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="books.html"
+                      class="nav-link px-2 link-dark"
+                      style="display: none"
+                      >Books</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="workshops.html"
+                      class="nav-link px-2 link-dark"
+                      style="display: none"
+                      >Workshops</a
+                    >
+                  </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </header>
-        <main>
-          <div class="container-fluid">
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <form id="updatePost" class="p-4 p-md-5 mt-3 border rounded-3 bg-light" style="width: 60%">
-                  <div class="form-group">
-                    <label for="">Title</label>
-                    <input class="form-control" type="text" name="title" required maxlength="100">
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="" class="mt-2">Body</label>
-                    <textarea class="form-control" type="text" name="body" required maxlength="500"></textarea>
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="" class="mt-2">Tags</label>
-                    <input class="form-control" type="text" name="tags">
-                  </div>
-            
-                  <div class="form-group">
-                    <label for="" class="mt-2">Media</label>
-                    <input class="form-control" type="url" name="media" placeholder="Please set a media URL">
-                  </div>
-          
-                  <button class="btn btn-outline-dark mt-3">Update Post</button> 
-        
+                <form
+                  class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+                  id="searchForm"
+                  role="search"
+                >
+                  <input
+                    type="search"
+                    class="form-control"
+                    id="searchInput"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
                 </form>
+                <div class="dropdown text-end">
+                  <a
+                    href="#"
+                    class="d-block link-dark text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      id="avatar"
+                      src="/images/Profile-img-placeholder.jpg"
+                      alt="mdo"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li>
+                      <a class="dropdown-item" href="/profile/index.html"
+                        >Profile</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        id="logOut"
+                        href="../../profile/register/index.html"
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </main>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
-          <a href="feed.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <img src="/images/Urbangarden_logo.jpg" class="bi me-2" style="display: none" width="150" height="32">
-          </a>
-        </footer>
+          </header>
+          <main>
+            <div class="container-fluid">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <form
+                    id="updatePost"
+                    class="p-4 p-md-5 mt-3 border rounded-3 bg-light"
+                    style="width: 60%"
+                  >
+                    <div class="form-group">
+                      <label for="">Title</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="title"
+                        required
+                        maxlength="100"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="" class="mt-2">Body</label>
+                      <textarea
+                        class="form-control"
+                        type="text"
+                        name="body"
+                        required
+                        maxlength="500"
+                      ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="" class="mt-2">Tags</label>
+                      <input class="form-control" type="text" name="tags" />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="" class="mt-2">Media</label>
+                      <input
+                        class="form-control"
+                        type="url"
+                        name="media"
+                        placeholder="Please set a media URL"
+                      />
+                    </div>
+
+                    <button class="btn btn-outline-dark mt-3">
+                      Update Post
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer
+            class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+          >
+            <p class="col-md-4 mb-0 text-muted">© 2024 Bori Kokeny</p>
+            <a
+              href="feed.html"
+              class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+            >
+              <img
+                src="/images/Urbangarden_logo.jpg"
+                class="bi me-2"
+                style="display: none"
+                width="150"
+                height="32"
+              />
+            </a>
+          </footer>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -5,14 +5,13 @@ export function setCreatePostFormListener() {
 
   if (form) {
     form.addEventListener("submit", async (event) => {
-      event.preventDefault()
+      event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      createPost(post)
+      createPost(post);
       console.log(post);
-    })
+    });
   }
-
 }
