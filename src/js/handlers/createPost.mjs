@@ -5,27 +5,13 @@ export function setCreatePostFormListener() {
 
   if (form) {
     form.addEventListener("submit", async (event) => {
-      event.preventDefault()
+      event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      // try {
-      //   await login(profile);
-      //   await viewPosts();
-      // } catch {
-      //   console.error("error");
-      // }
-
-      createPost(post)
-    })
+      createPost(post);
+      console.log(post);
+    });
   }
-  // const posts = ;
-  // console.log(posts);
 }
-
-//15:09
-// js/us/events/onAuth.js = js/handlers/login.mjs
-// js/ui/listeners/auth.js setAuthListener = js/handlers/register.mjs
-
-// talan ide johet a getPosts meghivasa, korabban az eredeti index.mjs legaljan volt es mukodott

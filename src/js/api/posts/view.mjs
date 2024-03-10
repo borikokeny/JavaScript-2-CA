@@ -1,9 +1,12 @@
-import  { API_HOST_URL, API_POSTS } from "../constants.mjs";
+import {
+  API_HOST_URL,
+  API_POSTS,
+  API_POSTS_WITH_AUTHOR,
+} from "../constants.mjs";
 import { authFetch } from "../fetch.mjs";
-// import { headers } from "../headers.mjs";
 
-export async function viewPosts() { 
-  const viewPostsURL = `${API_HOST_URL}${API_POSTS}`;
+export async function viewPosts() {
+  const viewPostsURL = `${API_HOST_URL}${API_POSTS_WITH_AUTHOR}`;
 
   const response = await authFetch(viewPostsURL);
 
@@ -11,11 +14,11 @@ export async function viewPosts() {
 }
 
 export async function viewPost(id) {
-  if(!id) {
+  if (!id) {
     throw new Error("GET request requires an ID");
-  } 
-  
-  const viewPostURL = `${API_HOST_URL}${API_POSTS}/${id}`;
+  }
+
+  const viewPostURL = `${API_HOST_URL}${API_POSTS}/${id}/?_author=true`;
 
   const response = await authFetch(viewPostURL);
 

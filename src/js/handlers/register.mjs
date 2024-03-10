@@ -5,18 +5,17 @@ export function setRegisterFormListener() {
 
   if (form) {
     form.addEventListener("submit", async (event) => {
-      event.preventDefault()
+      event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries())
-  
-      // register(profile)
+      const profile = Object.fromEntries(formData.entries());
+
       try {
         await register(profile);
-        // await getPosts();
+        window.location.href = "../../../profile/login/index.html";
       } catch {
         console.error("error");
       }
-    })
+    });
   }
 }

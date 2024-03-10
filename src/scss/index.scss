@@ -2,3 +2,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn {
+  --#{$prefix}btn-border-radius: 0%;
+}
